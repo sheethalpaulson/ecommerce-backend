@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-console.log('process.env.DB_URI',process.env.DB_URI);
 
 const connectDatabase = () => {
   mongoose
