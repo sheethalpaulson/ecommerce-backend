@@ -1,4 +1,3 @@
-var mongoose = require('mongoose');
 const app = require("./app");
 const cloudinary = require("cloudinary");
 const connectDatabase = require("./config/database");
@@ -38,7 +37,17 @@ app.use(
   cors(
     {
       origin: ["http://localhost:3000", "https://sheethal-ecommerce-site.onrender.com"],
-      methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+      methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
+      "headers.allow": ["Authorization", "Accept", "Content-Type", "Access-Control-Request-Headers", "Access-Control-Request-Method"],
+        "credentials": true,
+        "cache": 86400
     }
   )
-)
+);
+
+// app.options('*', cors());
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
+// })
