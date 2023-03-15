@@ -37,7 +37,7 @@ process.on("unhandledRejection", (err) => {
 app.use(
   cors(
     {
-      origin: ["http://localhost:3000", "https://sheethal-ecommerce.onrender.com"]
+      origin: ["http://localhost:3000", "https://sheethal-ecommerce-site.onrender.com"]
     }
   )
 )
