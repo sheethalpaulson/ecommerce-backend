@@ -11,6 +11,7 @@ const sendToken = (user, statusCode, res) => {
     // secure: process.env.NODE_ENV === "production",
     httpOnly: true
   };
+  console.log('Cookie Options', options)
 
   res.cookie("token", token, options)
      .status(statusCode)
