@@ -35,10 +35,10 @@ process.on("unhandledRejection", (err) => {
 
 var corsOptions = {
   "origin": ["http://localhost:3000", "https://sheethal-ecommerce-site.onrender.com"],
-  "methods": ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
-  "allowedHeaders": ["Authorization", "Accept", "Content-Type", "Access-Control-Request-Headers", "Access-Control-Request-Method"],
+//   "methods": ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
+//   "allowedHeaders": ["Authorization", "Accept", "Content-Type", "Access-Control-Request-Headers", "Access-Control-Request-Method"],
   "credentials": true,
-  "cache": 86400
+//   "cache": 86400
 };
 
 app.use(cors(corsOptions));
