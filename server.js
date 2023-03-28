@@ -41,5 +41,5 @@ var corsOptions = {
   "cache": 86400
 };
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
