@@ -12,7 +12,7 @@ require("dotenv").config();
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', [process.env.FRONTEND_URL]);
   res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,PATCH,DELETE');
-  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  res.append('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.append('Access-Control-Allow-Credentials', 'true');
   next();
 });
