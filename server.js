@@ -33,17 +33,15 @@ process.on("unhandledRejection", (err) => {
   });
 });
 
-app.use(
-  cors(
-    {
-      "origin": ["http://localhost:3000", "https://sheethal-ecommerce-site.onrender.com"],
-      "methods": ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
-      "headers.allow": ["Authorization", "Accept", "Content-Type", "Access-Control-Request-Headers", "Access-Control-Request-Method"],
-      // "credentials": true,
-      "cache": 86400
-    }
-  )
-);
+var corsOptions = {
+  "origin": ["http://localhost:3000", "https://sheethal-ecommerce-site.onrender.com"],
+  "methods": ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
+  "allowedHeaders": ["Authorization", "Accept", "Content-Type", "Access-Control-Request-Headers", "Access-Control-Request-Method", "Access-Control-Allow-Origin"],
+  "credentials": true,
+  "cache": 86400
+};
+
+app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
